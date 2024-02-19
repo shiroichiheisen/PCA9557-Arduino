@@ -10,13 +10,15 @@ Initialize the library with the I2C address of your PCA9557 chip and begin commu
 
 // Define the I2C address for the PCA9557
 uint8_t pcaAdress = 0x20;
+uint8_t pcaAdress2 = 0x21;
 
 // Create a PCA9557 object
 PCA9557 pca(pcaAdress);
 PCA9557 pca(pcaAdress, 1); // Initialize the library and optionally start the Wire library
 
 void setup() {
-// Setup configurations if necessary
+// Change the I2C address if necessary
+pca.setAddress(pcaAdress2);
 }
 
 void loop() {

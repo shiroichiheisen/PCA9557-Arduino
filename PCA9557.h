@@ -15,6 +15,7 @@ public:
 	void setPolarityInversion(uint8_t groupValue);
 	uint8_t readConfiguration();
 	void setConfiguration(uint8_t configuration);
+	void setAddress(uint8_t PCAaddress);
 
 private:
 	enum commandRegisters
@@ -32,8 +33,6 @@ private:
 	void writeI2c(uint8_t address, uint8_t data);
 	void writeI2c(uint8_t address, uint8_t data, uint8_t data2);
 	uint8_t readI2c(uint8_t address);
-
-	TwoWire *wire;
 };
 
 #endif

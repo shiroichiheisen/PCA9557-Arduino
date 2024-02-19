@@ -3,7 +3,7 @@
 
 PCA9557::PCA9557(uint8_t PCAaddress, bool beginWire)
 {
-  PCA9557Address = PCAaddress;
+  this->PCA9557Address = PCAaddress;
   if (beginWire)
     Wire.begin();
 }
@@ -13,6 +13,11 @@ void PCA9557::writeI2c(uint8_t address, uint8_t data)
   Wire.beginTransmission(address);
   Wire.write(data);
   Wire.endTransmission();
+}
+
+void PCA9557::setAddress(uint8_t PCAaddress)
+{
+  this->PCA9557Address = PCAaddress;
 }
 
 void PCA9557::writeI2c(uint8_t address, uint8_t data, uint8_t data2)
